@@ -37,10 +37,22 @@ CRITERIA = re.compile("\\(([^()]*|\\([^()]*\\))*\\)")
 
 # The following template files are not processed by this script.
 IGNORED_TEMPLATES = (
-    "checks_base.yaml.j2", # base template, nothing in there to use.
-    "maas_rally.yaml.j2", # not check related
-    "rally_deployment.yaml.j2", # not check related
-    "clouds.yaml.j2", # not check related
+    "checks_base.yaml.j2",
+    "client.my.cnf.j2",
+    "clouds.yaml.j2",
+    "enabled_plugins.j2",
+    "maas_rally_logrotate.j2",
+    "maas_rally.yaml.j2",
+    "maasrc.j2",
+    "rackspace-monitoring-agent.cfg.j2",
+    "rackspace-monitoring-poller.cfg.j2",
+    "rally_deployment.yaml.j2",
+    "rally-constraint.txt.j2",
+    "rally.conf.j2",
+    "raxrc.j2",
+    "run_plugin_in_rally_venv.sh.j2",
+    "run_plugin_in_venv.sh.j2",
+    "test_metadata.yaml.j2"
 )
 
 
@@ -534,7 +546,6 @@ def _main():
                                 print("\t\t\t{}: {}".format(typ, parameter))
                     else:
                         print("\t\t\tVariable: {} = {}".format(key, value))
-
 
 
 if __name__ == "__main__":
